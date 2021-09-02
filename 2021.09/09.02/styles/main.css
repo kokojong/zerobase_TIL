@@ -144,10 +144,12 @@ input[type="button"]:focus {
 /* enabled */
 /* 디폴트 값으로 disabled가 아닌거만 적용 */
 input[type="text"]:enabled {
+  background-color: white;
 }
 
 /* disabled */
 input[type="text"]:disabled {
+  background-color: white;
 }
 
 /* checked */
@@ -190,9 +192,11 @@ input[type="checkbox"]:checked {
 }
 
 ul > li:last-of-type {
+  background-color: white;
 }
 
 p + selector {
+  background-color: white;
 }
 .parent {
   color: blue;
