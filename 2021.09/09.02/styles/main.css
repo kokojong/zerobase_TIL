@@ -1,0 +1,217 @@
+/* Type selector */
+h2 {
+  color: purple;
+}
+
+/* Id selector */
+#welcome-title {
+  color: red;
+}
+
+/* Class selctor */
+.movie {
+  color: blue;
+}
+
+/* 1. [attr] */
+/* 이 속성을 가지고 있다면 */
+a[target] {
+  color: hotpink;
+}
+
+/* 2. [attr=value] */
+/* 이 속성의 값이 이것과 같다면 */
+a[href="https://www.naver.com/"]
+{
+  color: indigo;
+}
+
+/* 3. [attr^=value] */
+/* 이 값으로 시작하는 것들 */
+a[href^="https://"]
+{
+  color: green;
+}
+
+/* 4. [attr$=value] */
+/* 이 값으로 끝나는 것들 */
+a[href$=".com"] {
+  font-style: italic;
+}
+
+/* 5. [attr*=value] */
+/* 이 값이 적어도 하나(포함) */
+a[href*="naver"] {
+  font-size: larger;
+}
+
+/* Pseudo-Class Selector(가상 클래스 선택자) */
+/* 1. first-child */
+/* 첫 번째 자식을 선택함 */
+li:first-child {
+  color: yellow;
+}
+
+.movie:first-child {
+  color: red;
+}
+/* 주의 할 점 !!!
+첫번째 li인 toy story의 class를 지운다고 zootopia가 선택 되는것이 아니다 
+ -> 즉, 내가 고른 class의 부모의 첫 자식(근데 얘는 movie클래스가 아님) */
+
+/* 2. last-child */
+/* 마지막 자식을 선택 */
+span:last-child {
+  color: tomato;
+}
+
+/* 3. nth-child */
+/* 지정한 수 번째의 자식(숫자 or 매개변수도 가능 - 2n 등 or odd even등도 사용 가능) */
+
+/* first-child vs first-of-type */
+/* 1. first-of-type */
+/* 형제들 중에서 첫번째 자식을 찾는다 - first-child를 보다 명확하게 사용(휴먼 에러 제거) */
+/* 특정 타입을 찾고, 그 형제들 중에서 첫 번째 */
+p:first-child {
+  color: red;
+}
+/* 주의 할 점 !!!
+.class:first-of-type 으로 지정하게 된다면 
+같은 class이름을 갖는 태그가 여러개면 각각의 태그의 첫 번째 태그에만 적용된다*/
+
+/* 2. last-of-type */
+/* 특정 타입을 찾고, 그 형제들 중에서 마지막 */
+p:last-of-type {
+  color: rosybrown;
+}
+
+/* 3. nth-of-type() */
+/* 특정 타입을 찾고, 그 형제들 중에서 n 번째 */
+/* 지정한 수 번째의 자식(숫자 or 매개변수도 가능 - 2n 등 or odd even등도 사용 가능) */
+p:nth-of-type(even) {
+  color: royalblue;
+}
+
+/* 클래스명을 지정 */
+input:not(.pw) {
+  background-color: silver;
+}
+
+/* 타입을 지정 */
+input:not([type="password"]) {
+  background-color: silver;
+}
+
+/* 이 속성을 안가지고 있는 것 */
+input:not([placeholder]) {
+  background-color: tomato;
+}
+
+/* link */
+/* 링크가 처음으로 보여지는 색(방문 전) */
+a:link {
+  color: yellow;
+}
+
+/* visited */
+/* 방문 한 적이 있다면 변경(기록을 지운다면 다시 파란색) */
+
+/* hover */
+/* 마우스를 올렸을 때 */
+input[type="button"] {
+  background-color: skyblue;
+}
+input[type="button"]:hover {
+  background-color: teal;
+}
+
+/* active */
+/* 마우스를 눌렀을 때(떼기 전의 상태) mouse-down */
+input[type="button"]:active {
+  background-color: red;
+}
+/* 주의!!! */
+/* 자신보다 뒤에 위치하고 동등한 명시성을 가진 클래스가 덮어 쓸 수 있음(link hover visited )*/
+/* 그래서 LVHA 순서대로 작성하기를 권장 */
+/* link - visited - hover - active */
+
+/* focus */
+/* 요소가 포커싱 되었을 때(tab으로 선택 or text 타입의 경우 작성중인 input) */
+input[type="button"]:focus {
+  background-color: blue;
+}
+
+/* enabled */
+/* 디폴트 값으로 disabled가 아닌거만 적용 */
+input[type="text"]:enabled {
+}
+
+/* disabled */
+input[type="text"]:disabled {
+}
+
+/* checked */
+/* checkbox가 가질 수 있는 boolean 타입 */
+input[type="radio"]:checked {
+  outline: 3px solid red;
+}
+input[type="checkbox"]:checked {
+  outline: 3px solid blue;
+}
+
+/* before */
+/* 가상의 존재에 적용된다(???) */
+/* 원래 없던 요소인데 이 선택자 앞에 붙여줌 */
+/* 드래그가 되지 않음 -> text로 받아들이지 않고 꾸미는것으로 여겨짐(스타일 적인 요소로) */
+/* 뱃지를 붙이거나 메뉴 사이에 구분점,구분바를 추가 할 때 */
+.favorite::before {
+  content: "🎈";
+}
+
+/* after */
+/* 선택자의 뒤에 붙여줌(기능 동일) */
+
+/*  first-letter */
+/* 첫번째 글자에만 적용.*/
+/* 만약에 before을 이용해서 추가한다면 before 요소의 첫 글자에 적용 */
+.movie1::first-letter {
+  color: red;
+  font-size: 30px;
+}
+
+/* first-line */
+/* 첫 줄에만 적용(가로 폭에 의해서 개행이 된 기준) 
+-> 가로를 늘이거나 줄여도 상관x */
+
+/* selection */
+/* 드래그 해서 선택한 영역을 스타일링 */
+.movie1::selection {
+  background-color: yellowgreen;
+}
+
+ul > li:last-of-type {
+}
+
+p + selector {
+}
+.parent {
+  color: blue;
+  font-size: 5px;
+}
+
+.child2 {
+  color: initial;
+}
+
+.child1 {
+  color: red;
+}
+
+.parent1,
+.parent2 {
+  color: blue;
+}
+
+.parent2 * {
+  color: inherit;
+}
