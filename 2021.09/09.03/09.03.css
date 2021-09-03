@@ -1,0 +1,31 @@
+.text {
+  color: red;
+  font-size: 24px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+
+  /* 위와 동일함 */
+  font: 20px Georgia, "Times New Roman", Times, serif;
+
+  /* sytle, weight 는 무조건 size앞에, 
+  line-weight는 /와 함께 size뒤에 사용, family는 맨뒤 */
+  /* 만약에 위에 style을 정했어도 font를 사용할 때 비워두면 디폴트 사용 */
+}
+
+.text {
+  letter-spacing: 5px;
+}
+
+.default {
+  text-indent: 20px;
+}
+.container {
+  text-indent: 20%;
+}
+span {
+  color: blue;
+  text-decoration: line-through red 3px double;
+}
+p {
+  width: calc(10% * 5);
+  background-color: blueviolet;
+}
