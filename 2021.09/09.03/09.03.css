@@ -16,16 +16,15 @@
 }
 
 .default {
-  text-indent: 20px;
+  text-indent: 10px;
 }
 .container {
-  text-indent: 20%;
+  text-indent: 2%;
 }
 span {
   color: blue;
   text-decoration: line-through red 3px double;
 }
 p {
-  width: calc(10% * 5);
   background-color: blueviolet;
 }
