@@ -1,0 +1,23 @@
+<script>
+  // 1 1 2 3 5 8 13 21 ...
+  // n번째 값 = n-1번째 + n-2번째
+  var n2 = 1;
+  var n1 = 1;
+  for (var i = 0; i < 100; i++) {
+    var n = n2 + n1;
+    console.log(n);
+    n2 = n1;
+    n1 = n;
+  }
+
+  var n2 = 1;
+  var n1 = 1;
+  var i = 0;
+  while (n1 < 10000) {
+    var n = n2 + n1;
+    console.log(n);
+    n2 = n1;
+    n1 = n;
+    i++;
+  }
+</script>

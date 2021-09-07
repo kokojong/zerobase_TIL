@@ -1,0 +1,33 @@
+<script>
+  var list = [
+    {
+      question: "좋아하는 과일을 선택해주세요",
+      options: ["사과", "오렌지", "바나나", "딸기", "복숭아"],
+    },
+    {
+      question: "좋아하는 음식을 선택해주세요",
+      options: ["쫘장면", "치킨", "피자", "김치", "매운탕"],
+    },
+    {
+      question: "좋아하는 반려동물을 선택해주세요",
+      options: ["개", "고양이", "원숭이", "악어", "다람쥐"],
+    },
+  ];
+
+  console.log(list);
+
+  for (var i = 0; i < list.length; i++) {
+    var qMsg = list[i].question + "\n";
+    for (var j = 0; j < list[i].options.length; j++) {
+      qMsg += j + 1 + "." + list[i].options[j] + "\n";
+    }
+    list[i].answer = prompt(qMsg);
+  }
+
+  for (var i = 0; i < list.length; i++) {
+    var index = parseInt(list[i].answer);
+    var msg =
+      list[i].question + "\n당신의 선택은 : " + list[i].options[index - 1];
+    alert(msg);
+  }
+</script>
