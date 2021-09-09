@@ -1,0 +1,10 @@
+.my-bg:active{
+    background-color: red;
+}
+
+.check[type= "checkbox"]{
+    background-color: red;
+}
+header{
+    color: blue;
+}
