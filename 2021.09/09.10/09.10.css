@@ -1,0 +1,34 @@
+.demo {
+  border-top: 100px solid #ccc;
+  height: 300px;
+}
+
+@keyframes grow {
+  0% {
+    font-size: 0;
+  }
+  100% {
+    font-size: 40px;
+  }
+}
+
+.demo:hover .grows {
+  animation-name: grow;
+  animation-duration: 3s;
+}
+
+.demo:hover .growsandstays {
+  animation-name: grow;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+.demo:hover .backward {
+  animation-name: grow;
+  animation-duration: 3s;
+  animation-fill-mode: backwards;
+}
+.demo:hover .both {
+  animation-name: grow;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+}
